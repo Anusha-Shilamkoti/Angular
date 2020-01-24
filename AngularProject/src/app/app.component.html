@@ -1,0 +1,36 @@
+<html>
+<body>
+ <pre>Hello Angular!!! 
+This is my First Application
+</pre>
+<h1>Date pipe</h1>
+<b>{{todaydate | date:'d/M/y'}}</b><br/>
+<b>{{todaydate | date:'shortTime'}}</b>
+
+<div style="text-align:center">
+  <h1>
+     Welcome to {{title | uppercase}}.
+  </h1>
+</div>
+<div> Months:
+<select (change) = "changemonths($event)">
+  <option *ngFor="let i of months">{{i}} </option>
+</select>
+</div>
+<div>
+  <span *ngIf = "isavailable">Condition is valid.</span> 
+</div>
+<div>
+  <span *ngIf="isavailable; else condition1">Condition is valid.</span>
+  <ng-template #condition1>Condition is invalid</ng-template>
+</div>
+<button (click)="myClickFunction($event)">
+  Click Me
+</button>
+<div style="text-align:center">
+  <span MyDirective >Welcome to {{title}}.</span>
+</div>
+{{todaydate}}
+<app-new></app-new>
+</body>
+</html>
